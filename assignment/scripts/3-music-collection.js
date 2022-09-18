@@ -22,66 +22,53 @@ function addToCollection (title, artist, yearPublished){
     const album0 = {
         title,
         artist,
-        yearPublished,
+        yearPublished
     };
     collection.push(album0);
     return album0; 
 };
 console.log(addToCollection('Dreamland', 'Glass Animals', '2020'));
-console.log(addToCollection('Dreamland', 'Glass Animals', '2020'));
-console.log(addToCollection('Dreamland', 'Glass Animals', '2020'));
-console.log(addToCollection('Dreamland', 'Glass Animals', '2020'));
-console.log(addToCollection('Dreamland', 'Glass Animals', '2020'));
-console.log(addToCollection('Dreamland', 'Glass Animals', '2020'));
-console.log(addToCollection('Dreamland', 'Glass Animals', '2020'));
+console.log(addToCollection('God Loves Ugly', 'Atmosphere', '2002'));
+console.log(addToCollection('How to: Friend, Love, Freefall', 'RKS', '2018'));
+console.log(addToCollection('Good News for People who Love Bad News', 'Modest Mouse', '2004'));
+console.log(addToCollection('Bayani Redux', 'Blue Scholars', '2007'));
+console.log(addToCollection('Can\'t Wake Up', 'Shakey Graves', '2018'));
+console.log(addToCollection('House of the Holy', 'Led Zeppelin', '1973'));
 console.log(collection);
 
 
 function showCollection (albums){
     console.log(albums.length);
     for (let i of albums){
-        console.log(i);
+        console.log(i['title'] + ' by ' + i['artist'] + 
+        ' published in ' + i['yearPublished']);
     }
 }
 showCollection(collection);
 
 
-// - Add a function named `showCollection`. This function should:
-//   - Take in an array parameter. (This allows it to be reused to show any collection, like the results from the find or search.)
-//   - Console.log the number of items in the array.
-//   - Loop over the array and console.log each album's information formatted like: `TITLE by ARTIST, published in YEAR`.
+function findByArtist (artist){
+    artistArray = [];
+    for (let x = 0; x < collection.length; x++) {
+         if (collection[x].artist === artist){
+            artistArray.push(artist);
+        }
+    }
+        return artistArray;
+     }
+console.log(findByArtist('Atmosphere'));
+console.log(findByArtist('Aesop Rock'));
+
+
+// - Add a function named `findByArtist`. This function should:
+//   - Take in `artist` (a string) parameter
+//   - Create an array to hold any results, empty to start
+//   - Loop through the `collection` and add any objects 
+    // with a matching artist to the array.
+//   - Return the array with the matching results. If no results 
+    //are found, return an empty array.
 
 // title: title,
 // artist: artist,
 // yearPublished: yearPublished
-
-   // const album1 = {
-    //     title: 'God Loves Ugly',
-    //     artist: 'Atmosphere',
-    //     yearPublished: '2002'
-    // }
-    // const album2 = {
-    //     title: 'How to: Friend, Love, Freefall',
-    //     artist: 'Rainbow Kitten Surprise',
-    //     yearPublished: '2018'
-    // }
-    // const album3 = {
-    //     title: 'Good News for People who Love Bad News',
-    //     artist: 'Modest Mouse',
-    //     yearPublished: '2004'
-    // }
-    // const album4 = {
-    //     title: 'Bayani Redux',
-    //     artist: 'Blue Scholars',
-    //     yearPublished: '2007'   
-    // }
-    // const album5 = {
-    //     title: 'Can\'t Wake Up',
-    //     artist: 'Shakey Graves',
-    //     yearPublished: '2018'
-    // }
-    // const album6 = {
-    //     title: 'House of the Holy',
-    //     artist: "Led Zeppelin",
-    //     yearPublished: '1973'
-    // }
+ 
